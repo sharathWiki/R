@@ -87,11 +87,14 @@
   
   cube=function(d,n)
   {
-    cube=d^n
+    cube=d/n
   }
   
   plot(d,cube(d,2), xlab="x-axis" , ylab="y-axis", col="red", main = "first lab" ,typ = 'l')
   lines(d,cube(d,3) , col= "blue")
   lines(d,cube(d,4), col="green")
   
-  legend=("topright",legend=c("red n=2", "blue n=3", "green n=4"))
+  legend("topright",legend=c("red n=2", "blue n=3", "green n=4"),fill=c("red", "blue", "green"))
+  
+ 
+  
