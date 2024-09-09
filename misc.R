@@ -1,0 +1,26 @@
+x<-c(0,1,2,3,4)
+p<-c(0.41,0.37,0.16,0.05,0.01)
+expval<-sum(x*p)
+weighted.mean(x,p)
+#2
+f<-function(t)[t*0.1*exp(-0.1*t)]
+expv=integrate(f,0,Inf)
+print(expv$value)
+#3
+x=c(0,1,2,3)
+y=10*x-12
+p=c(0.1,0.2,0.2,0.5)
+Expval=sum(y*p)
+#5
+f=function(x){
+  (3/4)*(1/4)^(x-1)
+}
+x=3;
+y=x^2
+prob=f(y)
+prob
+expvalue=sum(y*prob)
+Z=(y-expvalue)^2
+probZ=f(Z)
+variance=sum(Z*probZ)
+print(variance)
