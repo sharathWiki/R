@@ -1,4 +1,4 @@
-#1
+`#1
 cfunc=function(x,y){
   2*(2*x+3*y)/5
 }
@@ -36,7 +36,7 @@ y=c(0,1,2)
 #2a)
 #matrix(c(f(0,01),f(0,1))) ....
 # or better method 
-m=matrix(c(f(0,0:2),f(1,0:2),f(2,0:2),f(3,0:2)),nrow = 4,ncol = 3,byrow = TRUE)
+m=matrix(c(cfunc5(0,0:2),cfunc5(1,0:2),cfunc5(2,0:2),cfunc5(3,0:2)),nrow = 4,ncol = 3,byrow = TRUE)
 m
 
 #2b)
@@ -68,3 +68,23 @@ varx=M2x-(Ex*Ex)
 vary=M2y-(Ey*Ey)
 varx
 vary
+
+cfunc6=function(x,y){
+  x*y*(x+y)/30
+}
+x=c(0,1,2,3)
+y=c(0,1,2)
+
+Mxy=matrix(c(cfunc6(0,0:2),cfunc6(1,0:2),cfunc6(2,0:2),cfunc6(3,0:2)),nrow = 4,ncol = 3,byrow = TRUE)
+Mxy
+Exy=sum(Mxy)
+
+#covxyexy - ex* ey
+
+covXY=Exy-Ex*Ey
+covXY
+
+#cor covxy/sqrt(var x * var y)
+
+cor=covXY/sqrt(varx*vary)
+cor
